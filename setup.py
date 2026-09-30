@@ -22,7 +22,8 @@ if sys.argv[-1] == 'publish':
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
-install_requires = ['django', 'Markups', 'sh', 'docutils', 'rst2html5']
+# Markups 3+ dropped get_document_body(text); 4+ dropped _publish_parts.
+install_requires = ['django', 'Markups>=2.0,<3', 'sh', 'docutils', 'rst2html5']
 
 
 extras_require = {                                      # noqa
